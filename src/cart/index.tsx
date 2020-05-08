@@ -51,7 +51,8 @@ export default function Cart() {
 				bordered
 				dataSource={cartData}
 				renderItem={(item) => {
-					const checked = checkedMap[item.id] || false;
+					// const checked = checkedMap[item.id] || false;
+					const checked = false;
 					return (
 						<List.Item>
 							<ItemCard item={item} checked={checked} onCheckedChange={onCheckedChange}></ItemCard>

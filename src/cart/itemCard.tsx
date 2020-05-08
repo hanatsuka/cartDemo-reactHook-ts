@@ -1,11 +1,18 @@
 import React from 'react';
-
+import { CartItem } from './';
+import { OnCheckedChange } from './use-checked';
 import { Typography } from 'antd';
-const ItemCard = (props) => {
+
+interface Props {
+	item: CartItem;
+	checked: boolean;
+	onCheckedChange: OnCheckedChange;
+}
+const ItemCard = (props: Props) => {
 	const { item, checked, onCheckedChange } = props;
 	const { name, price } = item;
 
-	const onWrapCheckedChange = (e) => {
+	const onWrapCheckedChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { checked } = e.target;
 		onCheckedChange(item, checked);
 	};
