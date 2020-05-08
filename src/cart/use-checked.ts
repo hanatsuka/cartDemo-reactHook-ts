@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { CartItem } from './index';
 
 type CheckedMap = {
-	[id: number]: boolean;
+	[id: string]: boolean;
 };
 export type OnCheckedChange = (item: CartItem, checked: boolean) => any;
 

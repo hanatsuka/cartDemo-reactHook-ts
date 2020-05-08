@@ -13,7 +13,9 @@ const ItemCard = (props: Props) => {
 	const { name, price } = item;
 
 	const onWrapCheckedChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		e.persist();
 		const { checked } = e.target;
+		console.log('e>>>', e);
 		onCheckedChange(item, checked);
 	};
 	return (

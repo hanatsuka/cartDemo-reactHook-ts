@@ -43,8 +43,13 @@ export default function Cart() {
 			</div>
 		</div>
 	);
+	const inputFunc = (e: React.ChangeEvent<HTMLInputElement>) => {
+		e.persist();
+		console.log(e);
+	};
 	return (
 		<div className="cart">
+			<input type="text" onChange={inputFunc} />
 			<List
 				header={<div>购物车</div>}
 				footer={Footer}
@@ -54,9 +59,9 @@ export default function Cart() {
 					// const checked = checkedMap[item.id] || false;
 					const checked = false;
 					return (
-						<List.Item>
-							<ItemCard item={item} checked={checked} onCheckedChange={onCheckedChange}></ItemCard>
-						</List.Item>
+						// <List.Item>
+						<ItemCard item={item} checked={checked} onCheckedChange={onCheckedChange}></ItemCard>
+						// </List.Item>
 					);
 				}}
 			></List>
